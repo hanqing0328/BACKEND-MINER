@@ -1,0 +1,64 @@
+@font-face {
+	src: url("./fonts/lato/lato-v17-latin-regular.eot");  /* 字体文件路径 */
+	src: url("./fonts/lato/lato-v17-latin-regular.woff2") format("woff2"),
+		url("./fonts/lato/lato-v17-latin-regular.woff") format("woff"),
+		url("./fonts/lato/lato-v17-latin-regular.ttf") format("truetype"),
+		url("./fonts/lato/lato-v17-latin-regular.svg") format("svg");
+	font-family: lato;  /* 字体名称 */
+	font-style: normal;  /* 字形，如斜体 */
+	font-weight: normal;  /* 加粗 */
+}
+@font-face {
+	src: url("./fonts/poppins/poppins-v15-latin-regular.eot");  /* 字体文件路径 */
+	src: url("./fonts/poppins/poppins-v15-latin-regular.woff2") format("woff2"),
+		url("./fonts/poppins/poppins-v15-latin-regular.woff") format("woff"),
+		url("./fonts/poppins/poppins-v15-latin-regular.ttf") format("truetype"),
+		url("./fonts/poppins/poppins-v15-latin-regular.svg") format("svg");
+	font-family: poppins;  /* 字体名称 */
+	font-style: normal;  /* 字形，如斜体 */
+	font-weight: normal;  /* 加粗 */
+}
+/* icon font */
+@font-face {
+	src: url("fonts/icon/backend-miner-webfont.eot?m38xw3");
+	src:  url("fonts/icon/backend-miner-webfont.eot?m38xw3#iefix") format("embedded-opentype"),
+		url("fonts/icon/backend-miner-webfont.ttf?m38xw3") format("truetype"),
+		url("fonts/icon/backend-miner-webfont.woff?m38xw3") format("woff"),
+		url("fonts/icon/backend-miner-webfont.svg?m38xw3#backend-miner-webfont") format("svg");
+	font-family: icon;
+	font-style: normal;
+	font-weight: normal;
+	font-display: block;
+}
+i[class^="iconfont-"] {
+	font-family: icon !important;
+	font-style: normal;
+	font-size: 23.62px;
+	color: #fff;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+.iconfont-active {
+	color: #38d9a9 !important;
+}
+.iconfont-logo::before {
+	content: "\e900";
+}
+.iconfont-addminer::before {
+	content: "\e901";
+}
+.iconfont-delete::before {
+	content: "\e902";
+}
+.iconfont-loader::before {
+	content: "\e903";
+}
+.iconfont-miners::before {
+	content: "\e904";
+}
+.iconfont-planets::before {
+	content: "\e905";
+}
+.iconfont-asteroids::before {
+	content: "\e906";
+}

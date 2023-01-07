@@ -1,13 +1,21 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
+import './index.less';
 import reportWebVitals from './reportWebVitals';
+import Header from './components/header';
+import LeftContent from './components/leftContent';
+import RightContent from './components/rightContent';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+    <div className='backend-miner'>
+      <Header />
+      <div className='content'>
+        <LeftContent />
+        <RightContent />
+      </div>
+    </div>
   </React.StrictMode>
 );
 

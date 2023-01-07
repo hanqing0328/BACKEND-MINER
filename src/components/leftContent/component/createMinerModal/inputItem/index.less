@@ -1,0 +1,41 @@
+.input-item {
+	display: flex;
+	position: relative;
+	flex-direction: column;
+	margin-bottom: 16px;
+	&.error::after {
+		position: absolute;
+		left: 0;
+		top: 54px;
+		width: 150px;
+		font-size: 9px;
+		color: #eb5757;
+		content: "This name is already taken.";
+	}
+	.item-name {
+		font-size: 11px;
+		color: #9499c3;
+	}
+	.ant-input,
+	.ant-input-number,
+	.ant-input-number-input,
+	.ant-input-number-input-wrap {
+		border-color: #1a1c31;
+		width: 399px;
+		height: 36px;
+		background-color: #242538 !important;
+		font-size: 12px;
+		color: #fff;
+		&.error {
+			border-color: #eb5757 !important;
+		}
+	}
+	.ant-input-number,
+	.ant-input-number-input-wrap,
+	.ant-input-number-input {
+		width: 125px !important;
+	}
+	.ant-input-number-handler-wrap {
+		display: none;
+	}
+}
