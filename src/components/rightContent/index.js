@@ -21,6 +21,7 @@ const RightContent = ({dataSource}) => {
           planets.map((planet, index) => {
           return <SubjectItem 
                     position={{x: planet.position.x, y: planet.position.y}} 
+                    minerals={planet.minerals}
                     itemUrl={`./assets/planet${index+1}.svg`}
                     type='planet'
                   />
@@ -31,7 +32,7 @@ const RightContent = ({dataSource}) => {
           return <SubjectItem 
                     position={{x: asteroid.position.x, y: asteroid.position.y}} 
                     itemUrl={'./assets/asteroids.svg'}
-                    type='planet'
+                    type='asteroid'
                   />
           })
         }

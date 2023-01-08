@@ -3,29 +3,40 @@ import './index.less'
 
 const SubjectItem = (props) => {
   const {
-    type, //planet || miner
+    type, //planet || miner || asteroid
     position,
     itemUrl,
     angle,
-    style={}
+    style={},
+    minerals
   } = props;
 
-  const className = classNames({
+  const subjectItemClassName = classNames({
     'subject-item': true,
     [type]: type
   })
 
+  const planetMineralsClassName = classNames({
+    'planet-minerals': true,
+    'active': minerals >= 1000
+  })
+
   return(
-    <img 
-      src={itemUrl} 
-      className={className} 
+    <div         
+      className={subjectItemClassName} 
       style={{
         ...style,
         '--position-x': position.x,
         '--position-y': position.y,
-        '--miner-angle': angle
+        '--miner-angle': angle,
       }}
-    />
+    >
+      <img src={itemUrl}/>
+      {
+        minerals &&
+        <div className={planetMineralsClassName}>{minerals}/1000</div>
+      }
+    </div>
   )
 
 };

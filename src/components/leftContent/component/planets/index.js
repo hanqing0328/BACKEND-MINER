@@ -40,7 +40,7 @@ const Planets = ({dataSource={}}) => {
       title: 'Minerals',
       dataIndex: 'minerals',
       key: 'minerals',
-      render: (minerals) => <span className={minerals > 1000 ? `cell-active`: null}>{minerals}/1000</span>,
+      render: (minerals) => <span className={minerals >= 1000 ? `cell-active`: null}>{minerals}/1000</span>,
     },
     {
       title: '',

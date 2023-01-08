@@ -2,8 +2,19 @@
 	position: absolute;
 	left: calc(var(--position-x) * .6 * 1px);
 	top: calc(var(--position-y) * .6 * 1px);
-	&.planet {
+	&.planet img,
+	&.asteroid img {
 		animation: planet-rotate 50s linear infinite;
+	}
+	.planet-minerals {
+		text-align: center;
+		font-weight: bold;
+		font-size: 16px;
+		color: #fff;
+		transform: translate(-50%);
+		&.active {
+			color: #00cf67;
+		}
 	}
 }
 @keyframes planet-rotate {
