@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Routes, Route, Link, useLocation } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Link, useLocation, redirect } from 'react-router-dom';
 import classNames from 'classnames'
 import Miners from './component/miners';
 import Asteroids from './component/asteroids';
@@ -52,7 +52,7 @@ const LeftContent = ({dataSource}) => {
        }
       </ul>
       <div className='slim-line'/>
-      <Routes>
+      <Routes>     
           <Route path='/miners' element={<Miners dataSource={dataSource.miners}/>} />
           <Route path='/asteroids' element={<Asteroids dataSource={dataSource.asteroids}/>} />
           <Route path='/planets' element={<Planets dataSource={dataSource}/>} />
