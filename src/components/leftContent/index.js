@@ -1,11 +1,9 @@
 import { BrowserRouter as Router, Routes, Route, Link, useLocation } from 'react-router-dom';
-import io from 'socket.io-client';
 import classNames from 'classnames'
 import Miners from './component/miners';
 import Asteroids from './component/asteroids';
 import Planets from './component/planets';
 import './index.less';
-import { useEffect, useState } from 'react';
 
 const NavItem = ({itemName}) => {
       //assigning location variable
@@ -41,23 +39,7 @@ const NavItem = ({itemName}) => {
 
 const navItemList = ['miners', 'asteroids', 'planets']
 
-const LeftContent = () => {
-
-  const [dataSource, setDataSource] = useState({})
-
-  // connect to websocket
-  useEffect(() => {
-    var socket = io('https://asteroids.dev.mediasia.cn',{
-      transports: ["polling"],
-  });
-    socket.on('connect', function(){
-      console.log('connect success', socket.connected);
-      
-    });
-    socket.on('tick', function(msg) {
-      setDataSource(msg)
-    });
-  }, [])
+const LeftContent = ({dataSource}) => {
 
   return (
     <Router>
@@ -69,6 +51,7 @@ const LeftContent = () => {
         })
        }
       </ul>
+      <div className='slim-line'/>
       <Routes>
           <Route path='/miners' element={<Miners dataSource={dataSource.miners}/>} />
           <Route path='/asteroids' element={<Asteroids dataSource={dataSource.asteroids}/>} />

@@ -1,0 +1,16 @@
+.subject-item {
+	position: absolute;
+	left: calc(var(--position-x) * .6 * 1px);
+	top: calc(var(--position-y) * .6 * 1px);
+	&.planet {
+		animation: planet-rotate 50s linear infinite;
+	}
+}
+@keyframes planet-rotate {
+	from {
+		transform: translate(-50%) rotate(0deg);
+	}
+	to {
+		transform: translate(-50%) rotate(360deg);
+	}
+}

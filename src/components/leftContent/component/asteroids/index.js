@@ -1,7 +1,6 @@
 import { Table } from 'antd';
 
 const Asteroids = ({dataSource=[]}) => {
-  // console.log('dataSource', dataSource)
   const columns = [
     {
       title: 'Name',

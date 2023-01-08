@@ -21,13 +21,15 @@ const MinerListOfPlanetModal = ({showModal, setShowModal, planet}) => {
   return (
     <Modal
     open={showModal}
-    onCancel={() => setShowModal(false)}
+    onCancel={() => setShowModal(null)}
     footer={null}
     wrapClassName='minal-list-of-planet-modal'
     >
       <div className='title'>List of miners of {planet.name}</div>{
         loading?
-        <i className='iconfont-loader'></i>:
+        <div className='loader'>
+          <i className='iconfont-loader'></i>
+        </div>:
         <Table 
           columns={finalColums} 
           dataSource={minerList} 

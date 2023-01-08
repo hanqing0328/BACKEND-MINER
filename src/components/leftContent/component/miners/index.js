@@ -8,7 +8,6 @@ const statusMap = {
   1: 'Traveling',
   2: 'Mining',
   3: 'Transfering',
-  4: 'Transferring done'
 }
 const columns = [
   {

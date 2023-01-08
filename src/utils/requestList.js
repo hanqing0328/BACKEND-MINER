@@ -16,7 +16,6 @@ const getMinerHistory = (minerId) => {
     },
     transformRequest: [
       (data) => {
-        console.log('minerId', minerId)
         return qs.stringify(data)
       }
     ],

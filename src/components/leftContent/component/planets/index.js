@@ -7,7 +7,6 @@ import MinerListOfPlanetModal from '../minerListOfPlanetModal';
 import './index.less';
 
 const Planets = ({dataSource={}}) => {
-  console.log('dataSource', dataSource)
   const {
     planets,
     miners

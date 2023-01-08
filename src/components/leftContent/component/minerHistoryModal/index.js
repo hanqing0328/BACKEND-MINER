@@ -1,11 +1,18 @@
 import { useEffect, useState } from 'react';
 import { Modal, Table } from 'antd';
+import moment from 'moment';
 import { getMinerHistory } from '../../../../utils/requestList';
-import { statusMap } from '../miners';
 import './index.less';
 
+
+const statusMap = {
+  1: 'SPAWN',
+  2: 'Traveling to asteroid',
+  3: 'Mining',
+  4: 'Traveling back to planet',
+  5: 'Transferring minerals to planet',
+}
 const MinerHistoryModal = ({showModal, setShowModal, miner}) => {
-  console.log('miner', miner)
   const [historyList, setHistoryList] = useState([]);
   const [loading, setLoading] = useState(true);
 
@@ -23,6 +30,7 @@ const MinerHistoryModal = ({showModal, setShowModal, miner}) => {
       title: 'Date',
       dataIndex: 'updatedAt',
       key: 'updatedAt',
+      render: (data) => <span>{moment(data).format('YYYY/MM/DD h:mm:ss')}</span>
     },
     {
       title: 'Year',
@@ -75,14 +83,16 @@ const MinerHistoryModal = ({showModal, setShowModal, miner}) => {
     footer={null}
     wrapClassName='miner-history-modal'
     >
-      <div className='title'>History of {miner.name}</div>{
+      <div className='title'>History of {miner.name}</div>
+      {
         loading?
-        <i className='iconfont-loader'></i>:
+        <div className='loader'>
+          <i className='iconfont-loader'></i>
+        </div>:        
         <Table 
-          columns={columns} 
-          dataSource={historyList} 
-          // pagination={false}
-          bordered
+            columns={columns} 
+            dataSource={historyList} 
+            bordered
         />
       }
     </Modal>

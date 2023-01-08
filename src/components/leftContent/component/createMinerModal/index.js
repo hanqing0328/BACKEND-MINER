@@ -25,12 +25,9 @@ const CreateMinerModal = (props) => {
   })
 
   const checkName = (newName) => {
-    console.log('minerList', minerList)
     const isUnValidName = minerList.some(miner => {
-      debugger
       return miner.name === newName
     }) || !newName;
-    debugger
     if(isUnValidName){
       setShowError(true)
       return false
@@ -55,7 +52,6 @@ const CreateMinerModal = (props) => {
     }
     const finalData = Object.assign(data, attribute)
     createMiner(finalData).then((res) => {
-      console.log('create', res);
       setLoading(false);
       setShowCreateMinerModalIndex(-1);
       setShowSuccessModal(true);
@@ -71,7 +67,6 @@ const CreateMinerModal = (props) => {
       className: 'select-option'
     }
   })
-  console.log('planetOptionList', planetOptionList)
 
   return (
     <Modal
