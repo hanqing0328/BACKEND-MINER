@@ -12,8 +12,8 @@ There is no final goal to reach. The goal is that the simulation works.
 ## UI
 
 [UI Design link](https://www.figma.com/file/OX9KUE33QGTyaSfpiBMsEN/%5BSlingshot%5D-Asteroids---Javascript-Development-Test)  
-password: SlingshotToAsteroids
-![List of miners](/images/miners.png)
+password: SlingshotToAsteroids  
+![List of miners](/images/asteroids.png)
 
 ## datasource Interface
 
